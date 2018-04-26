@@ -1,0 +1,26 @@
+p,.heading {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: colored 10s infinite linear;
+    background-image: -webkit-linear-gradient(90deg, #f35626, #feab3a);
+    
+  }
+  @-webkit-keyframes colored {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+  }
+
+  hr{
+    visibility: hidden;
+    
+  }
+
+h1{
+  margin-top :  20%;
+}
+
+ 
