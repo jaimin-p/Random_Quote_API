@@ -10,14 +10,21 @@ $('#generate-quote').on('click', function(e) {
   
   // enable tweet button
   enableTweet();
-  $.ajax( {
-    url: 'https://quotesondesign.com//wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-    success:function(data) {
-      
-      var post = data.shift(); // The data is an array of posts. Grab the first one.
-      
-      $("#quote-content").html( '<h3 class="animated fadeInUp">' +  post.content  + "</h3> "  +"<p> - " + post.title + "</p>")
-      
+$.ajax({
+    url:
+      "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+    dataType: "jsonp",
+    success: function(data) {
+      var post = data; // The data is an array of posts. Grab the first one.
+
+      $("#quote-content").html(
+        '<h3 class="animated fadeInUp">' +
+          post.quoteText +
+          "</h3> " +
+          "<p> - " +
+          post.quoteAuthor +
+          "</p>"
+      );
     },
     cache: false
   });
